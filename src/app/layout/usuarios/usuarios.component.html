@@ -1,0 +1,67 @@
+<div class="row">
+  <div class="col-12">
+
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs navbar-dropdown">
+      <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" data-target="#usuarios">Usuarios</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" data-target="#tipoUsuarios">Tipos de usuario</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" data-target="#tipoUsuarios">Roles</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" data-target="#tipoUsuarios">Permisos</a>
+      </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+
+      <div class="tab-pane container active" id="usuarios">
+        <table class="table table-striped">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Registrado el:</th>
+              <th scope="col">Tipo</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">E-Mail</th>
+              <th scope="col">Telefono</th>
+              <th scope="col">Cant. Propiedades</th>
+              <th scope="col">Cant. Destaques</th>
+              <th scope="col">Verificado</th>
+              <th scope="col">¿Tiene foto?</th>
+              <th scope="col"> </th>
+              <th scope="col"> </th>
+              <th scope="col"> </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let u of usuarios">
+              <th scope="row">{{u.id}}</th>
+              <td>{{u.created_at}}</td>
+              <td>{{u.tipo_user_name}}</td>
+              <td>{{u.surname}} {{u.name}}</td>
+              <td>{{u.email}}</td>
+              <td>{{u.celular}}</td>
+              <td>{{u.cant_prop}}</td>
+              <td>{{u.cant_destaques}}</td>
+              <td>{{u.enabled}}</td>
+              <td>{{u.con_foto}}</td>
+              <td><button type="button" class="btn btn-info" center>Ficha</button></td>
+              <td><button type="button" class="btn btn-success" center>Editar</button></td>
+              <td><button type="button" class="btn btn-danger" center>Eliminar</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="tab-pane container fade" id="tipoUsuarios">
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,235 @@
+<div class="row">
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs navbar-dropdown">
+    <li class="nav-item"><a (click)="cargarPestania(1)" class="nav-link active" data-toggle="tab" data-target="#l1">Nivel 1 - "Paises"</a>  </li>
+    <li class="nav-item"><a (click)="cargarPestania(2)" class="nav-link" data-toggle="tab" data-target="#l2">Nivel 2 - "Provincias"</a>     </li>
+    <li class="nav-item"><a (click)="cargarPestania(3)" class="nav-link" data-toggle="tab" data-target="#l3">Nivel 3 - "Ciudades"</a>       </li>
+    <li class="nav-item"><a (click)="cargarPestania(4)" class="nav-link" data-toggle="tab" data-target="#l4">Nivel 4 - "Barrios"</a>        </li>
+    <li class="nav-item"><a (click)="cargarPestania(5)" class="nav-link" data-toggle="tab" data-target="#l5">Nivel 5 - "Subzonas"</a>
+    <li class="nav-item"><a class="nav-link" data-toggle="tab" data-target="#deno">Denominaciones</a>      </li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content col-12">
+
+    <div class="tab-pane active" id="l1">
+      <div class="row">
+        <div class="col-12">
+          <div class="btn-group"> <!-- Nivel 1 -->
+            <button type="button" class="btn btn-success" (click)="newZona(1,null)">Agregar Zona</button>
+          </div>
+        </div>
+      </div>
+
+      <table class="table table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre:</th>
+            <th scope="col">Es un/una:</th>
+            <th scope="col">Seleccionable:</th>
+            <th scope="col"> </th>
+            <th scope="col"> </th>
+            <th scope="col"> </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let u of zonas[0]">
+            <th scope="row">{{u.id}}</th>
+            <td>{{u.nombre}}</td>
+            <td>{{u.n_denom}}</td>
+            <td>{{u.final}}</td>
+            <td><button (click)="newZona(2,u)" type="button" class="btn btn-info" center>Agregar Subzona</button></td>
+            <td><button (click)="editZona(u)" type="button" class="btn btn-success" center>Editar</button></td>
+            <td><button (click)="borrar(u)"   type="button" class="btn btn-danger" center>Eliminar</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tab-pane container fade" id="l2">
+
+      <div class="row">
+        <div class="col-12">
+          <div class="btn-group"> <!-- Nivel 2 -->
+            <button type="button" class="btn btn-success" (click)="newZona(2,null)">Agregar Zona</button>
+          </div>
+        </div>
+      </div>
+
+      <table class="table table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre:</th>
+            <th scope="col">Pertenece a:</th>
+            <th scope="col">Es un/una:</th>
+            <th scope="col">Seleccionable:</th>
+            <th scope="col"> </th>
+            <th scope="col"> </th>
+            <th scope="col"> </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let u of zonas[1]">
+            <th scope="row">{{u.id}}</th>
+            <td>{{u.nombre}}</td>
+            <td>{{u.nombre_root}}</td>
+            <td>{{u.n_denom}}</td>
+            <td>{{u.final}}</td>
+            <td><button (click)="newZona(3,u)" type="button" class="btn btn-info" center>Agregar Subzona</button></td>
+            <td><button (click)="editZona(u)"  type="button" class="btn btn-success" center>Editar</button></td>
+            <td><button (click)="borrar(u)"    type="button" class="btn btn-danger" center>Eliminar</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tab-pane container fade" id="l3">
+
+      <div class="row">
+        <div class="col-12">
+          <div class="btn-group"> <!-- Nivel 3 -->
+            <button type="button" class="btn btn-success" (click)="newZona(3,null)">Agregar Zona</button>
+          </div>
+        </div>
+      </div>
+
+      <table class="table table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre:</th>
+            <th scope="col">Pertenece a:</th>
+            <th scope="col">Es un/una:</th>
+            <th scope="col">Seleccionable:</th>
+            <th scope="col"> </th>
+            <th scope="col"> </th>
+            <th scope="col"> </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let u of zonas[2]">
+            <th scope="row">{{u.id}}</th>
+            <td>{{u.nombre}}</td>
+            <td>{{u.nombre_root}}</td>
+            <td>{{u.n_denom}}</td>
+            <td>{{u.final}}</td>
+            <td><button (click)="newZona(4,u)" type="button" class="btn btn-info" center>Agregar Subzona</button></td>
+            <td><button (click)="editZona(u)"  type="button" class="btn btn-success" center>Editar</button></td>
+            <td><button (click)="borrar(u)"    type="button" class="btn btn-danger" center>Eliminar</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tab-pane container fade" id="l4">
+
+      <div class="row">
+        <div class="col-12">
+          <div class="btn-group"> <!-- Nivel 4 -->
+            <button type="button" class="btn btn-success" (click)="newZona(4,null)">Agregar Zona</button>
+          </div>
+        </div>
+      </div>
+
+      <table class="table table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre:</th>
+            <th scope="col">Pertenece a:</th>
+            <th scope="col">Es un/una:</th>
+            <th scope="col">Seleccionable:</th>
+            <th scope="col"> </th>
+            <th scope="col"> </th>
+            <th scope="col"> </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let u of zonas[3]">
+            <th scope="row">{{u.id}}</th>
+            <td>{{u.nombre}}</td>
+            <td>{{u.nombre_root}}</td>
+            <td>{{u.n_denom}}</td>
+            <td>{{u.final}}</td>
+            <td><button (click)="newZona(5,u)" type="button" class="btn btn-info" center>Agregar Subzona</button></td>
+            <td><button (click)="editZona(u)"  type="button" class="btn btn-success" center>Editar</button></td>
+            <td><button (click)="borrar(u)"    type="button" class="btn btn-danger" center>Eliminar</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tab-pane container fade" id="l5">
+
+      <div class="row">
+        <div class="col-12">
+          <div class="btn-group"> <!-- Nivel 5 -->
+            <button type="button" class="btn btn-success" (click)="newZona(5,null)">Agregar Zona</button>
+          </div>
+        </div>
+      </div>
+
+      <table class="table table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre:</th>
+            <th scope="col">Pertenece a:</th>
+            <th scope="col">Es un/una:</th>
+            <th scope="col">Seleccionable:</th>
+            <th scope="col"> </th>
+            <th scope="col"> </th>
+            <th scope="col"> </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let u of zonas[4]">
+            <th scope="row">{{u.id}}</th>
+            <td>{{u.nombre}}</td>
+            <td>{{u.nombre_root}}</td>
+            <td>{{u.n_denom}}</td>
+            <td>{{u.final}}</td>
+            <td><button (click)="editZona(u)" type="button" class="btn btn-success" center>Editar</button></td>
+            <td><button (click)="borrar(u)"   type="button" class="btn btn-danger" center>Eliminar</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tab-pane container fade" id="deno">
+
+      <div class="row">
+        <div class="col-12">
+          <div class="btn-group"> <!-- Denominaciones -->
+            <button type="button" class="btn btn-success" (click)="newDenominacion()">Agregar Denominación</button>
+          </div>
+        </div>
+      </div>
+
+      <table class="table table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre:</th>
+            <th scope="col"> </th>
+            <th scope="col"> </th>
+            <th scope="col"> </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let u of denominaciones">
+            <th scope="row">{{u.id}}</th>
+            <td>{{u.nombre}}</td>
+            <td><button type="button" class="btn btn-success" center>Editar</button></td>
+            <td><button type="button" class="btn btn-danger" center>Eliminar</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+<zonas-modal></zonas-modal>

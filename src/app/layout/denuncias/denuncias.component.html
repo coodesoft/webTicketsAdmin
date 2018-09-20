@@ -1,0 +1,24 @@
+<table class="table table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Fecha</th>
+      <th scope="col">Motivo</th>
+      <th scope="col">Denunciante</th>
+      <th scope="col">Publicación</th>
+      <th scope="col"> </th>
+      <th scope="col"> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let d of denuncias">
+      <th scope="row">{{d.id}}</th>
+      <td>{{d.fecha}}</td>
+      <td>{{d.motivo_text}}</td>
+      <td>{{d.id_usuario}}</td>
+      <td>{{d.id_propiedad}}</td>
+      <td><button type="button" class="btn btn-info" center>Ver</button></td>
+      <td><button type="button" class="btn btn-danger" center>Eliminar</button></td>
+    </tr>
+  </tbody>
+</table>

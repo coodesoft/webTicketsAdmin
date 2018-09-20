@@ -1,0 +1,24 @@
+<table class="table table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Titulo</th>
+      <th scope="col">Autor</th>
+      <th scope="col">Fecha de Publicación</th>
+      <th scope="col"> </th>
+      <th scope="col"> </th>
+      <th scope="col"> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of propiedades">
+      <th scope="row">1</th>
+      <td>{{p.titulo}}</td>
+      <td>{{p.propietario_id}}</td>
+      <td>{{p.created_at}}</td>
+      <td><button type="button" class="btn btn-info" center>Ficha</button></td>
+      <td><button type="button" class="btn btn-success" center>Editar</button></td>
+      <td><button type="button" class="btn btn-danger" center>Eliminar</button></td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,50 @@
+<div class="row">
+  <form class="col-12">
+    <div class="form-group text-left" *ngIf="!(this.model.id == -1)">
+      <label>Nivel</label>
+      <select class="form-control" [(ngModel)]="model.nivel" name="nivel" (change)="updateZonaP()">
+        <option *ngFor="let n of niveles" [value]="n.id">{{n.t}}</option>
+      </select>
+    </div>
+
+    <div class="form-group text-left" *ngIf="this.model.id == -1">
+      <label>Nivel</label>
+      <input type="text" class="form-control" [(ngModel)]="model.nivel" name="nivel" readonly>
+    </div>
+
+    <div class="form-group text-left" *ngIf="model.root_id == -1">
+      <label>Zona Padre</label>
+      <select class="form-control" [(ngModel)]="model.root_id" name="root_id">
+        <option *ngFor="let zp of zonasPadres" [value]="zp.id">{{zp.nombre}}</option>
+      </select>
+    </div>
+
+    <div class="form-group text-left" *ngIf="!(model.root_id == -1)">
+      <label>Zona Padre</label>
+      <input type="text" class="form-control" [(ngModel)]="model.nombre_root" name="zonaPadre" readonly>
+    </div>
+
+    <div class="form-group text-left">
+      <label>Nombre</label>
+      <input type="text" class="form-control" [(ngModel)]="model.nombre" name="nombre">
+    </div>
+
+    <div class="form-group text-left" >
+      <label>Es un/a:</label>
+      <select class="form-control" [(ngModel)]="model.denominacion" name="denominacion">
+        <option *ngFor="let zp of denominaciones" [value]="zp.id">{{zp.nombre}}</option>
+      </select>
+    </div>
+
+    <div class="form-group text-left">
+      <label class="form-inline"><input type="checkbox" class="form-control" [(ngModel)]="model.final" name="final"> Zona elegible para propiedad
+      </label>
+    </div>
+
+  </form>
+</div>
+<div class="row">
+  <div class="btn-group">
+    <button type="button" class="btn btn-success" (click)="guardar()">Guardar</button>
+  </div>
+</div>

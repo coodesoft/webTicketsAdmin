@@ -1,0 +1,42 @@
+<nav class="sidebar" [ngClass]="{sidebarPushRight: isActive, collapsed: collapsed}">
+    <div class="list-group">
+        <a routerLink="/dashboard" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-dashboard"></i>&nbsp;
+            <span>{{ 'Dashboard' | translate }}</span>
+        </a>
+    </div>
+    <div class="list-group">
+        <a routerLink="/usuarios" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-users"></i>&nbsp;
+            <span>{{ 'Usuarios' | translate }}</span>
+        </a>
+    </div>
+    <div class="list-group">
+        <a routerLink="/propiedades" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-home"></i>&nbsp;
+            <span>{{ 'Propiedades' | translate }}</span>
+        </a>
+    </div>
+    <div class="list-group">
+        <a routerLink="/inmobiliarias" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-building"></i>&nbsp;
+            <span>{{ 'Inmobiliarias' | translate }}</span>
+        </a>
+    </div>
+    <div class="list-group">
+        <a routerLink="/denuncias" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-flag"></i>&nbsp;
+            <span>{{ 'Denuncias' | translate }}</span>
+        </a>
+    </div>
+    <div class="list-group">
+        <a routerLink="/zonas" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-map-marker"></i>&nbsp;
+            <span>{{ 'Zonas' | translate }}</span>
+        </a>
+    </div>
+    <div class="toggle-button" [ngClass]="{collapsed: collapsed}" (click)="toggleCollapsed()">
+        <i class="fa fa-fw fa-angle-double-left"></i>&nbsp;
+        <span>{{ 'Collapse Sidebar' | translate }}</span>
+    </div>
+</nav>

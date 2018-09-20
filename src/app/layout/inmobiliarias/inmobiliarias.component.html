@@ -1,0 +1,20 @@
+<table class="table table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre</th>
+      <th scope="col"> </th>
+      <th scope="col"> </th>
+      <th scope="col"> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of inmobiliarias">
+      <th scope="row">{{p.id}}</th>
+      <td>{{p.nombre}}</td>
+      <td><button type="button" class="btn btn-info" center>Ficha</button></td>
+      <td><button type="button" class="btn btn-success" center>Editar</button></td>
+      <td><button type="button" class="btn btn-danger" center>Eliminar</button></td>
+    </tr>
+  </tbody>
+</table>
